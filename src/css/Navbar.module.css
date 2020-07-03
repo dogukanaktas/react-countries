@@ -1,0 +1,55 @@
+.container {
+  background: radial-gradient(
+    circle,
+    rgba(174, 238, 228, 1) 0%,
+    rgba(13, 24, 33, 1) 100%
+  );
+  background: -moz-radial-gradient(
+    circle,
+    rgba(174, 238, 228, 1) 0%,
+    rgba(13, 24, 33, 1) 100%
+  );
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(174, 238, 228, 1) 0%,
+    rgba(13, 24, 33, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 4px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.globe {
+  height: 5.5rem;
+  width: 5.5rem;
+  margin: 1.25em 3em;
+  color: rgb(255, 255, 255);
+}
+
+.globe:hover {
+  color: rgb(184, 240, 184);
+  transition: 2s ease;
+}
+
+.li {
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+.link {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 1px 4px;
+  letter-spacing: 1px;
+}
+
+.link:hover {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 1px 20px;
+  transition: 1s ease;
+  text-decoration: none;
+}
