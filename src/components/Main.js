@@ -9,7 +9,6 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { FaLanguage } from "react-icons/fa";
 import { GoGlobe } from "react-icons/go";
 
-
 const Main = ({ search, country, setSearch, setCountry }) => {
   return (
     <div>
@@ -53,14 +52,21 @@ const Main = ({ search, country, setSearch, setCountry }) => {
                 <div>
                   <GrCurrency />{" "}
                   {val.currencies.map(
-                    (cur) => cur.code !== "(none)" && cur.code + ""
+                    (cur) => cur.code === "(none)" ? "" : cur.code === null ? "" : cur.code + ""
                   )}
                 </div>
                 <div>
-                  <BsFillPeopleFill /> {val.population ? val.population : '0'}
+                  <BsFillPeopleFill /> {val.population ? val.population : "0"}
                 </div>
                 <div>
-                    <GoGlobe /> {val.area+'km2'}
+                  <GoGlobe />{" "}
+                  {val.area ? (
+                    <span>
+                      {val.area} km<sup>2</sup>
+                    </span>
+                  ) : (
+                    "0"
+                  )}
                 </div>
               </div>
             </div>
