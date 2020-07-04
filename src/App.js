@@ -18,8 +18,6 @@ const App = () => {
       .catch((error) => console.log({ error }));
   }, []);
 
-  
-
   return (
     <Router>
       <Navbar />
@@ -37,7 +35,14 @@ const App = () => {
           )}
         />
         <Route exact path="/About" component={About} />
-        <Route exact path="/country/:name" component={CountryDetail} />
+        <Route
+          
+          path="/country/:name"
+          render={(renderProps) => {
+           const countries = country.filter((val) => val.alpha3Code === renderProps.match.params.name && val)
+            return <CountryDetail {...renderProps} countries={countries} />
+          }}
+        />
       </Switch>
     </Router>
   );
