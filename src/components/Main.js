@@ -60,7 +60,7 @@ const Main = ({ search, country, setSearch, setCountry }) => {
                   <BsFillPeopleFill /> {val.population ? val.population : '0'}
                 </div>
                 <div>
-                    <GoGlobe /> {val.area}
+                    <GoGlobe /> {val.area+'km2'}
                 </div>
               </div>
             </div>
