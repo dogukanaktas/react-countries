@@ -79,6 +79,57 @@ const Filter = ({ search, country, setSearch, setCountry }) => {
     setCountry(regAsc);
   };
 
+  const sortByLangDesc = () => {
+    const langDesc = [...country].sort((a, b) => {
+      return a.languages.map((lang) => lang.name) >
+        b.languages.map((lang) => lang.name)
+        ? -1
+        : a.languages.map((lang) => lang.name) <
+          b.languages.map((lang) => lang.name)
+        ? 1
+        : 0;
+    });
+    setCountry(langDesc);
+  };
+
+  const sortByLangAsc = () => {
+    const langAsc = [...country].sort((a, b) => {
+      return a.languages.map((lang) => lang.name) <
+        b.languages.map((lang) => lang.name)
+        ? -1
+        : a.languages.map((lang) => lang.name) >
+          b.languages.map((lang) => lang.name)
+        ? 1
+        : 0;
+    });
+    setCountry(langAsc);
+  };
+
+  const sortByCurDesc = () => {
+    const curDesc = [...country].sort((a, b) => {
+      return a.currencies.map((cur) => cur.name) >
+        b.currencies.map((cur) => cur.name)
+        ? -1
+        : a.currencies.map((cur) => cur.name) <
+          b.currencies.map((cur) => cur.name)
+        ? 1
+        : 0;
+    });
+    setCountry(curDesc);
+  };
+  const sortByCurAsc = () => {
+    const curAsc = [...country].sort((a, b) => {
+      return a.currencies.map((cur) => cur.name) <
+        b.currencies.map((cur) => cur.name)
+        ? -1
+        : a.currencies.map((cur) => cur.name) >
+          b.currencies.map((cur) => cur.name)
+        ? 1
+        : 0;
+    });
+    setCountry(curAsc);
+  };
+
   return (
     <div>
       <input
@@ -94,6 +145,27 @@ const Filter = ({ search, country, setSearch, setCountry }) => {
         <FaSortAlphaDownAlt onClick={() => sortByNameDesc()} />
       </div>
       <div>
+        <span>Sort by Capital: </span>
+        <AiOutlineSortDescending onClick={() => sortByCapitalAsc()} />
+        <AiOutlineSortAscending onClick={() => sortByCapitalDesc()} />
+      </div>
+      <div>
+        <span>Sort by Region: </span>
+        <AiOutlineSortDescending onClick={() => sortByRegAsc()} />
+        <AiOutlineSortAscending onClick={() => sortByRegDesc()} />
+      </div>
+      <div>
+        <span>Sort by Language: </span>
+        <FaSortAmountDown onClick={() => sortByLangAsc()} />
+        <FaSortAmountUpAlt onClick={() => sortByLangDesc()} />
+      </div>
+
+      <div>
+        <span>Sort by Currency: </span>
+        <FaSortAmountDown onClick={() => sortByCurAsc()} />
+        <FaSortAmountUpAlt onClick={() => sortByCurDesc()} />
+      </div>
+      <div>
         <span>Sort by Population: </span>
         <FaSortAmountDown onClick={() => sortByPopulationAsc()} />
         <FaSortAmountUpAlt onClick={() => sortByPopulationDesc()} />
@@ -103,19 +175,9 @@ const Filter = ({ search, country, setSearch, setCountry }) => {
         <FaSortAmountDown onClick={() => sortByAreaAsc()} />
         <FaSortAmountUpAlt onClick={() => sortByAreaDesc()} />
       </div>
-      <div>
-        <span onClick={() => sortByNameAsc()}>Clear Filters </span>
-      </div>
-      <div>
-        <span>Sort by Region: </span>
-        <AiOutlineSortDescending onClick={() => sortByRegAsc()} />
-        <AiOutlineSortAscending onClick={() => sortByRegDesc()} />
-      </div>
 
       <div>
-        <span>Sort by Capital: </span>
-        <AiOutlineSortDescending onClick={() => sortByCapitalAsc()} />
-        <AiOutlineSortAscending onClick={() => sortByCapitalDesc()} />
+        <span onClick={() => sortByNameAsc()}>Clear Filters </span>
       </div>
     </div>
   );
