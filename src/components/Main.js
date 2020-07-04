@@ -43,7 +43,7 @@ const Main = ({ search, country, setSearch, setCountry }) => {
                 <div>
                   <FaGlobe />{" "}
                   {val.region
-                    ? val.region + "-" + val.subregion
+                    ? val.region + " - " + val.subregion
                     : "Unspecified"}
                 </div>
                 <div>
@@ -52,7 +52,7 @@ const Main = ({ search, country, setSearch, setCountry }) => {
                 <div>
                   <GrCurrency />{" "}
                   {val.currencies.map(
-                    (cur) => cur.code === "(none)" ? "" : cur.code === null ? "" : cur.code + ""
+                    (cur) => cur.code === "(none)" ? "" : cur.code === null ? "" : cur.code + " "
                   )}
                 </div>
                 <div>
