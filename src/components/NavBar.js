@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import { FaGlobe } from "react-icons/fa";
+import { GiGlobe } from "react-icons/gi";
 import styles from '../css/Navbar.module.css'
 
 const NavBar = () => {
@@ -13,7 +13,7 @@ const NavBar = () => {
             </div>
             
             <div>
-            <Link to="/"><FaGlobe className={styles.globe}></FaGlobe></Link>
+            <Link to="/"><GiGlobe className={styles.globe}></GiGlobe></Link>
             </div>
             <div className={styles.navbar}>
                 <ul className={styles.nav}>
