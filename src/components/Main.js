@@ -56,13 +56,13 @@ const Main = ({ search, country, setSearch, setCountry }) => {
                   )}
                 </div>
                 <div>
-                  <BsFillPeopleFill /> {val.population ? val.population : "0"}
+                  <BsFillPeopleFill /> {val.population ? val.population.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') : "0"}
                 </div>
                 <div>
                   <GoGlobe />{" "}
                   {val.area ? (
                     <span>
-                      {val.area} km<sup>2</sup>
+                      {val.area.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} km<sup>2</sup>
                     </span>
                   ) : (
                     "0"
