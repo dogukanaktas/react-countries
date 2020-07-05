@@ -1,20 +1,42 @@
+p{
+  font-size: 1rem;
+  font-weight: 550;
+  letter-spacing: .25px;
+}
+
+span {
+  font-size: .85rem;
+  letter-spacing: 1px;
+}
+
 .container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
   background-color: rgb(232, 238, 246);
 }
 
-.subcontainer {
+.nameContainer{
   display: flex;
-  margin: 5em 0;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 2em;
+}
+
+.subContainer {
+  display: flex;
+  margin: 3em 0 5em 0;
   padding: 2em 3em;
   width: 80%;
   height: 100%;
   align-items: center;
   box-shadow: 0 1px 18px rgb(146, 143, 143);
-  background-color: #ffff;
+  background-color: rgb(250,250,250);
 }
 
 .leftSub {
@@ -22,26 +44,54 @@
   flex-direction: column;
   padding-right: 2em;
   border-right: 1px solid rgb(218, 218, 218);
-  width: 33%;
+  width: 40%;
   height: 100%;
 }
 
 .rightSub {
   display: flex;
-  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  align-items: center;
   padding-left: 2em;
+}
+
+
+
+.leftDetails {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
+  padding-right: 4.5em;
+}
+
+.leftDetails > div {
+  margin-bottom: 1.5em;
+}
+
+.rightDetails {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
 
 }
 
+.rightDetails > div {
+  margin-bottom: 1.5em;
+}
+
 .name {
-  align-self: center;
   letter-spacing: 1px;
   text-shadow: 0 1px 3px;
-  margin-bottom: 1.1em;
+  font-size: 3.5rem;
+  text-align: center;
 }
 
 .flag {
   width: 100%;
+  height: auto;
   box-shadow: 0 0 4px rgb(146, 143, 143);
   margin-bottom: 2em;
 }
@@ -88,3 +138,5 @@
   color: #000;
   margin-right: .5em;
 }
+
+
