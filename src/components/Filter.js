@@ -6,6 +6,7 @@ import { FaSortAmountUpAlt } from "react-icons/fa";
 import { FaSortAmountDown } from "react-icons/fa";
 import { AiOutlineSortDescending } from "react-icons/ai";
 import { AiOutlineSortAscending } from "react-icons/ai";
+import { FaSearch } from "react-icons/fa";
 
 const Filter = ({ search, country, setSearch, setCountry }) => {
   const sortByNameDesc = () => {
@@ -132,12 +133,17 @@ const Filter = ({ search, country, setSearch, setCountry }) => {
 
   return (
     <div>
-      <input
+      <div>
+        <input
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        placeholder="Enter country name..."
         autoFocus
       />
+      <FaSearch />
+      </div>
+      
       <div>
         {console.log(country)}
         <span>Sort by Name: </span>
