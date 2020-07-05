@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import styles from "../css/CountryDetail.module.css";
-import {BsArrowLeft} from 'react-icons/bs'
+import { BsArrowLeft } from "react-icons/bs";
 
 const CountryDetail = (props) => {
   const { countries, history } = props;
   console.log(countries);
   return (
     <div className={styles.container}>
-      <div className={styles.subcontainer}>
-        
+      <div className={styles.nameContainer}>
+      <h1 className={styles.name}>
+            {countries.map((val) => val.name.toUpperCase())}
+          </h1>
+      </div>
+      <div className={styles.subContainer}>
         <button className={styles.backButton} onClick={() => history.goBack()}>
-        <BsArrowLeft className={styles.arrow}/> <span className={styles.backButtonText}>Back</span>
+          <BsArrowLeft className={styles.arrow} />{" "}
+          <span className={styles.backButtonText}>Back</span>
         </button>
 
         <div className={styles.leftSub}>
-          <h1 className={styles.name}>
-            {countries.map((val) => val.name.toUpperCase())}
-          </h1>
           <img
             className={styles.flag}
             src={countries.map((val) => val.flag)}
@@ -26,49 +28,106 @@ const CountryDetail = (props) => {
         </div>
 
         <div className={styles.rightSub}>
-          <div>
-            <span>region:</span>
-            <h5 className={styles.region}>
-              {countries.map((val) => val.region)}
-            </h5>
-          </div>
-          <div>
-            <span>subregion:</span>
-            <h5 className={styles.subregion}>
-              {countries.map((val) => val.subregion)}
-            </h5>
-          </div>
-          <div>
-            <span>population:</span>
-            <h5 className={styles.population}>
-              {countries.map(val => val.population ? val.population.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') : "No")}
-            </h5>
-          </div>
-          <div>
-            <span>area:</span>
-            <h5 className={styles.area}>{countries.map((val) => val.area ? (
-                    <span>
-                      {val.area.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} km<sup>2</sup>
-                    </span>
+          <div className={styles.leftDetails}>
+            <div>
+              <span>region:</span>
+              <p className={styles.region}>
+                {countries.map((val) => val.region)}
+              </p>
+            </div>
+            <div>
+              <span>subregion:</span>
+              <p className={styles.subregion}>
+                {countries.map((val) => val.subregion)}
+              </p>
+            </div>
+            <div>
+              <span>population:</span>
+              <p className={styles.population}>
+                {countries.map((val) =>
+                  val.population
+                    ? val.population
+                        .toString()
+                        .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+                    : "No population"
+                )}
+              </p>
+            </div>
+            <div>
+              <span>area:</span>
+              <p className={styles.area}>
+                {countries.map((val, i) =>
+                  val.area ? (
+                    <p key={i}>
+                      {val.area
+                        .toString()
+                        .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}{" "}
+                      km<sup>2</sup>
+                    </p>
                   ) : (
-                    "0"
-                  ))}</h5>
+                    "unspecified"
+                  )
+                )}
+              </p>
+            </div>
+            <div>
+              <span>borders:</span>
+              <p className={styles.borders}>
+                {countries.map((val) => val.borders.length > 0 ? val.borders.map((bor) => bor && bor + "  ") : 'no borders')}
+              </p>
+            </div>
           </div>
-          <div>
-            <span>currencies:</span>
-            <h5 className={styles.currencies}>
-              {`${countries.map((val) => val.currencies.map((cur) => cur.name))} - ${countries.map((val) => val.currencies.map((cur) => cur.symbol))}`}
-            </h5>
-          </div>
-          <div>
-            <span>borders:</span>
-            <h5 className={styles.borders}>
-              {countries.map((val) => val.borders.map((bor) => bor + "  "))}
-            </h5>
-          </div>
-          <div>
-            <span>languages:</span>
-            <h5>{countries.map(val => val.languages.map(lang=> lang.name+' '))}</h5>
+
+          <div className={styles.rightDetails}>
+            <div>
+              <span>currencies:</span>
+              <p className={styles.currencies}>
+                {`${countries.map((val) =>
+                  val.currencies.map((cur) => cur.name)
+                )} - ${countries.map((val) =>
+                  val.currencies.map((cur) =>
+                    cur.symbol === "(none)"
+                      ? ""
+                      : cur.symbol === null
+                      ? ""
+                      : cur.symbol + " "
+                  )
+                )}`}
+              </p>
+            </div>
+            <div>
+              <span>languages:</span>
+              <p>
+                {countries.map((val) =>
+                  val.languages.map((lang) => lang.name + " ")
+                )}
+              </p>
+            </div>
+            <div>
+              <span>calling code:</span>
+              <p>
+                {countries.map((val) => 
+                  val.callingCodes.map((call) => call === "" ? 'no calling code' : call + " ")
+                )}
+              </p>
+            </div>
+            <div>
+              <span>top level domain:</span>
+              <p>
+                {countries.map((val) =>
+                  val.topLevelDomain.map((dom) => dom + " ")
+                )}
+              </p>
+            </div>
+            <div>
+              <span>time zone:</span>
+              <p>
+                {countries.map((val) =>
+                  val.timezones.map((time) => time + " ")
+                )}
+              </p>
+            </div>
+            
           </div>
         </div>
       </div>
