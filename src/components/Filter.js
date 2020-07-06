@@ -6,7 +6,10 @@ import { FaSortAmountUpAlt } from "react-icons/fa";
 import { FaSortAmountDown } from "react-icons/fa";
 import { AiOutlineSortDescending } from "react-icons/ai";
 import { AiOutlineSortAscending } from "react-icons/ai";
+import { TiArrowSortedUp } from "react-icons/ti";
+import { TiArrowSortedDown } from "react-icons/ti";
 import { FaSearch } from "react-icons/fa";
+import styles from "../css/Filter.module.css";
 
 const Filter = ({ search, country, setSearch, setCountry }) => {
   const sortByNameDesc = () => {
@@ -132,58 +135,96 @@ const Filter = ({ search, country, setSearch, setCountry }) => {
   };
 
   return (
-    <div>
-      <div>
-        <input
-        type="text"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        placeholder="Enter country name..."
-        autoFocus
-      />
-      <FaSearch />
-      </div>
-      
-      <div>
-        {console.log(country)}
-        <span>Sort by Name: </span>
-        <FaSortAlphaUp onClick={() => sortByNameAsc()} />
-        <FaSortAlphaDownAlt onClick={() => sortByNameDesc()} />
-      </div>
-      <div>
-        <span>Sort by Capital: </span>
-        <AiOutlineSortDescending onClick={() => sortByCapitalAsc()} />
-        <AiOutlineSortAscending onClick={() => sortByCapitalDesc()} />
-      </div>
-      <div>
-        <span>Sort by Region: </span>
-        <AiOutlineSortDescending onClick={() => sortByRegAsc()} />
-        <AiOutlineSortAscending onClick={() => sortByRegDesc()} />
-      </div>
-      <div>
-        <span>Sort by Language: </span>
-        <FaSortAmountDown onClick={() => sortByLangAsc()} />
-        <FaSortAmountUpAlt onClick={() => sortByLangDesc()} />
+    <div className={styles.filterContainer}>
+      <div className={styles.leftBox}>
+        <div className={styles.sortName}>
+          <span className={styles.textSize}>Name: </span>
+          <div>
+            <TiArrowSortedUp
+              className={styles.iconSize}
+              onClick={() => sortByNameAsc()}
+            />
+            <TiArrowSortedDown
+              className={styles.iconSize}
+              onClick={() => sortByNameDesc()}
+            />
+          </div>
+        </div>
+        <div className={styles.sortCapital}>
+          <span className={styles.textSize}>Capital: </span>
+          <div>
+          <TiArrowSortedUp
+            className={styles.iconSize}
+            onClick={() => sortByCapitalAsc()}
+          />
+          <TiArrowSortedDown
+            className={styles.iconSize}
+            onClick={() => sortByCapitalDesc()}
+          />
+          </div>
+        </div>
+        <div className={styles.sortRegion}>
+          <span className={styles.textSize}>Region: </span>
+          <TiArrowSortedUp
+            className={styles.iconSize}
+            onClick={() => sortByRegAsc()}
+          />
+          <TiArrowSortedDown
+            className={styles.iconSize}
+            onClick={() => sortByRegDesc()}
+          />
+        </div>
+        <div className={styles.sortLanguages}>
+          <span className={styles.textSize}>Language: </span>
+          <TiArrowSortedUp
+            className={styles.iconSize}
+            onClick={() => sortByLangAsc()}
+          />
+          <TiArrowSortedDown
+            className={styles.iconSize}
+            onClick={() => sortByLangDesc()}
+          />
+        </div>
       </div>
 
-      <div>
-        <span>Sort by Currency: </span>
-        <FaSortAmountDown onClick={() => sortByCurAsc()} />
-        <FaSortAmountUpAlt onClick={() => sortByCurDesc()} />
-      </div>
-      <div>
-        <span>Sort by Population: </span>
-        <FaSortAmountDown onClick={() => sortByPopulationAsc()} />
-        <FaSortAmountUpAlt onClick={() => sortByPopulationDesc()} />
-      </div>
-      <div>
-        <span>Sort by Area: </span>
-        <FaSortAmountDown onClick={() => sortByAreaAsc()} />
-        <FaSortAmountUpAlt onClick={() => sortByAreaDesc()} />
+      <div className={styles.searchBox}>
+        <div className={styles.searchInputBox}>
+          <input
+            className={styles.input}
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Enter country name..."
+            alt="sel"
+            autoFocus
+          />
+        </div>
+        <div className={styles.clearFilters}>
+          <span
+            className={styles.clearFiltersText}
+            onClick={() => sortByNameAsc()}
+          >
+            Clear Filters{" "}
+          </span>
+        </div>
       </div>
 
-      <div>
-        <span onClick={() => sortByNameAsc()}>Clear Filters </span>
+      <div className={styles.rightBox}>
+        <div className={styles.sortCurrency}>
+          <span>Sort by Currency: </span>
+          <FaSortAmountDown onClick={() => sortByCurAsc()} />
+          <FaSortAmountUpAlt onClick={() => sortByCurDesc()} />
+        </div>
+        <div className={styles.sortPopulation}>
+          <span>Sort by Population: </span>
+          <FaSortAmountDown onClick={() => sortByPopulationAsc()} />
+          <FaSortAmountUpAlt onClick={() => sortByPopulationDesc()} />
+        </div>
+        <div className={styles.sortArea}>
+          <span>Sort by Area: </span>
+          <FaSortAmountDown onClick={() => sortByAreaAsc()} />
+          <FaSortAmountUpAlt onClick={() => sortByAreaDesc()} />
+        </div>
       </div>
     </div>
   );
