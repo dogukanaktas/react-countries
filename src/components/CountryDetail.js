@@ -9,26 +9,36 @@ const CountryDetail = (props) => {
   return (
     <div className={styles.container}>
       <div className={styles.nameContainer}>
-      <h1 className={styles.name}>
-            {countries.map((val) => val.name.toUpperCase())}
-          </h1>
+        <h1 className={styles.name}>
+          {countries.map((val) => val.name.toUpperCase())}
+        </h1>
       </div>
       <div className={styles.subContainer}>
-        <button className={styles.backButton} onClick={() => history.goBack()}>
-          <BsArrowLeft className={styles.arrow} />{" "}
-          <span className={styles.backButtonText}>Back</span>
-        </button>
-
         <div className={styles.leftSub}>
           <img
             className={styles.flag}
             src={countries.map((val) => val.flag)}
             alt=""
           />
+          <div className={styles.buttonSub}>
+            <button
+              className={styles.backButton}
+              onClick={() => history.goBack()}
+            >
+              <BsArrowLeft className={styles.arrow} />{" "}
+              <span className={styles.backButtonText}>Back</span>
+            </button>
+          </div>
         </div>
 
         <div className={styles.rightSub}>
           <div className={styles.leftDetails}>
+            <div>
+              <span>capital:</span>
+              <p className={styles.capital}>
+                {countries.map((val) => val.capital || "No capital")}
+              </p>
+            </div>
             <div>
               <span>region:</span>
               <p className={styles.region}>
@@ -38,7 +48,7 @@ const CountryDetail = (props) => {
             <div>
               <span>subregion:</span>
               <p className={styles.subregion}>
-                {countries.map((val) => val.subregion)}
+                {countries.map((val) => val.subregion || "No subregion")}
               </p>
             </div>
             <div>
@@ -65,36 +75,25 @@ const CountryDetail = (props) => {
                       km<sup>2</sup>
                     </p>
                   ) : (
-                    "unspecified"
+                    "Unspecified"
                   )
                 )}
               </p>
             </div>
             <div>
-              <span>borders:</span>
+              <span>border nations:</span>
               <p className={styles.borders}>
-                {countries.map((val) => val.borders.length > 0 ? val.borders.map((bor) => bor && bor + "  ") : 'no borders')}
+                {countries.map((val) =>
+                  val.borders.length > 0
+                    ? val.borders.map((bor) => bor && bor + "  ")
+                    : "No border nations"
+                )}
               </p>
             </div>
           </div>
 
           <div className={styles.rightDetails}>
-            <div>
-              <span>currencies:</span>
-              <p className={styles.currencies}>
-                {`${countries.map((val) =>
-                  val.currencies.map((cur) => cur.name)
-                )} - ${countries.map((val) =>
-                  val.currencies.map((cur) =>
-                    cur.symbol === "(none)"
-                      ? ""
-                      : cur.symbol === null
-                      ? ""
-                      : cur.symbol + " "
-                  )
-                )}`}
-              </p>
-            </div>
+            
             <div>
               <span>languages:</span>
               <p>
@@ -106,28 +105,30 @@ const CountryDetail = (props) => {
             <div>
               <span>calling code:</span>
               <p>
-                {countries.map((val) => 
-                  val.callingCodes.map((call) => call === "" ? 'no calling code' : call + " ")
+                {countries.map((val) =>
+                  val.callingCodes.map((call) =>
+                    call === "" ? "No calling code" : call + " "
+                  )
                 )}
               </p>
             </div>
             <div>
-              <span>top level domain:</span>
+              <span>top level domain(s):</span>
               <p>
                 {countries.map((val) =>
                   val.topLevelDomain.map((dom) => dom + " ")
                 )}
               </p>
             </div>
+            
             <div>
-              <span>time zone:</span>
+              <span>time zone(s):</span>
               <p>
                 {countries.map((val) =>
-                  val.timezones.map((time) => time + " ")
+                  val.timezones.map((time) => time + "  ")
                 )}
               </p>
             </div>
-            
           </div>
         </div>
       </div>
