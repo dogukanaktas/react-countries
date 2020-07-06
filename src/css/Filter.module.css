@@ -1,0 +1,113 @@
+.filterContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: solid;
+    margin: 3em 0 4em 0;
+}
+
+
+.leftBox {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    border: solid;
+
+}
+
+.searchBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.searchInputBox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.1em;
+}
+
+.input {
+    width: 70%;
+    height: 3rem;
+    text-align: center;
+    border-radius: 6px;
+    border: none;
+    letter-spacing: .2px;
+    font-weight: 450;
+}
+
+.clearFilters{
+    text-align: center;
+    align-self: center;
+    width: 20%;
+    cursor:pointer;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px;
+    padding: 4px 0;
+    border: 1px solid rgb(121, 116, 116);
+}
+
+.clearFilters:hover {
+    transform: translateY(-2px);
+}
+
+.clearFilters:active {
+    transform: translateY(-1px);
+}
+
+.clearFiltersText {
+    font-size: 1rem;
+    letter-spacing: 0;
+
+}
+
+.rightBox {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    border: solid;
+}
+
+.sortName {
+    display: flex;
+    align-items: center;
+}
+
+.sortCapital {
+    display: flex;
+    align-items: center;
+}
+
+.sortRegion {
+    display: flex;
+    align-items: center;
+}
+
+.sortLanguages {
+    display: flex;
+    align-items: center;
+}
+
+
+.textSize {
+    font-size: 18px;
+}
+
+.iconSize {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.iconSize:hover {
+    transform: translateY(-1px);
+
+}
+
+.iconSize:active {
+    transform: translateY(1px);
+
+}
