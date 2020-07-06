@@ -32,8 +32,8 @@
 }
 
 .globe:hover {
-  color: rgb(184, 240, 184);
-  transition: 2s ease;
+  color: rgba(255, 255, 255,0.8);
+  transition: 1s ease;
 }
 
 .li {
