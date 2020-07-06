@@ -1,4 +1,143 @@
+
+.gridContainer {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 1em;
+}
+
+.gridBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25rem;
+  height: 33rem;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 1px 18px rgb(146, 143, 143);
+
+}
+
+.imageContainer {
+  width: 95%;
+  height: 14rem;
+  margin: 1.2em 0;
+
+}
+
 .image {
-    width: 20%;
-    height: 20%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 4px rgb(146, 143, 143);
+}
+
+.name {
+  margin-bottom: 0.2em;
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.nameText {
+  color: #000;
+
+}
+
+.nameText:hover {
+    color: rgb(113,157,154);
+    transition: 0.3s all;
+    text-decoration: none;
+}
+
+.nativeName {
+  text-align: center;
+}
+
+.capital {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.2em;
+  text-align: center;
+}
+
+.capitalIcon {
+  width: 1rem;
+  height: auto;
+  color: #000;
+  margin-right: 0.5em;
+}
+
+.region {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.2em;
+  text-align: center;
+}
+
+.regionIcon {
+  width: 1rem;
+  height: auto;
+  color: #000;
+  margin-right: 0.5em;
+}
+
+.languages {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0.2em;
+}
+
+.languagesIcon {
+  width: 1rem;
+  height: auto;
+  color: #000;
+  margin-right: 0.5em;
+}
+
+.currencies {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0.2em;
+}
+
+.currenciesIcon {
+  width: 1rem;
+  height: auto;
+  color: #000;
+  margin-right: 0.5em;
+}
+
+.population {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0.2em;
+}
+
+.populationIcon {
+  width: 1rem;
+  height: auto;
+  color: #000;
+  margin-right: 0.5em;
+}
+
+.area {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0.2em;
+}
+
+.areaIcon {
+  width: 1rem;
+  height: auto;
+  color: #000;
+  margin-right: 0.5em;
+}
+
+.areaSpan {
+  font-size: 1rem;
+  letter-spacing: 0;
 }
