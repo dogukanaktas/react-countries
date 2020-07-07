@@ -117,6 +117,9 @@ input:focus {
   transform: translateY(1px);
 }
 
+
+
+
 /*** Media Queries ***/
 
 @media screen and (max-width: 7000px) {
@@ -137,7 +140,6 @@ input:focus {
   }
 
   .input {
-    border: solid;
     width: 80%;
     height: 3rem;
     padding: 2em 0;
@@ -182,168 +184,38 @@ input:focus {
 }
 
 @media screen and (max-width: 1920px) {
-  .leftBox {
-    display: flex;
-    flex-direction: column;
-    width: 15%;
-    padding: 0.5em 0.8em;
-    margin-left: 2em;
-  }
-
-  .rightBox {
-    display: flex;
-    flex-direction: column;
-    width: 15%;
-    padding: 0.5em 0.8em;
-    margin-right: 2em;
-  }
-
-  .input {
-    border: solid;
-    width: 80%;
-    height: 3rem;
-    padding: 2em 0;
-    font-size: 1.5rem;
-    border-radius: 6px;
-  }
-
-  .filterContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 3em 0 4em 0;
-  }
-  .clearFilters {
-    text-align: center;
-    align-self: center;
-    width: 20%;
-
-    padding: 1em 0;
-  }
-
-  .clearFiltersText {
-    font-size: 1.4rem;
-  }
 
   .textSize {
     font-size: 20px;
-    width: 60%;
-    margin-left: 1rem;
-  }
-
-  .iconContainer {
-    display: flex;
-    width: 38%;
   }
 
   .iconSize {
     font-size: 2.2rem;
-    margin-right: 0.5rem;
   }
 }
 
 @media screen and (max-width: 1800px) {
   .leftBox {
-    display: flex;
-    flex-direction: column;
     width: 20%;
-    padding: 0.5em 0.8em;
-    margin-left: 2em;
   }
 
   .rightBox {
-    display: flex;
-    flex-direction: column;
     width: 20%;
-    padding: 0.5em 0.8em;
-    margin-right: 2em;
   }
 
   .input {
-    border: solid;
-    width: 80%;
-    height: 3rem;
-    padding: 2em 0;
-    font-size: 1.4rem;
-    border-radius: 6px;
-  }
-
-  .filterContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 3em 0 4em 0;
-  }
-  .clearFilters {
-    text-align: center;
-    align-self: center;
-    width: 20%;
-
-    padding: 1em 0;
-  }
-
-  .clearFiltersText {
     font-size: 1.4rem;
   }
-
-  .textSize {
-    font-size: 20px;
-    width: 60%;
-    margin-left: 1rem;
-  }
-
-  .iconContainer {
-    display: flex;
-    width: 38%;
-  }
-
-  .iconSize {
-    font-size: 2.2rem;
-    margin-right: 0.5rem;
-  }
+  
 }
 
 @media screen and (max-width: 1440px) {
   .leftBox {
-    display: flex;
-    flex-direction: column;
     width: 23%;
-    padding: 0.5em 0.8em;
-    margin-left: 2em;
-  }
-
-  .rightBox {
-    display: flex;
-    flex-direction: column;
-    width: 23%;
-    padding: 0.5em 0.8em;
-    margin-right: 2em;
   }
 
   .input {
-    border: solid;
-    width: 80%;
-    height: 3rem;
-    padding: 2em 0;
     font-size: 1rem;
-    border-radius: 6px;
-  }
-
-  .filterContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 3em 0 4em 0;
-  }
-  .clearFilters {
-    text-align: center;
-    align-self: center;
-    width: 20%;
-
-    padding: 1em 0;
   }
 
   .clearFiltersText {
@@ -352,86 +224,119 @@ input:focus {
 
   .textSize {
     font-size: 18px;
-    width: 60%;
-    margin-left: 1rem;
-  }
-
-  .iconContainer {
-    display: flex;
-    width: 38%;
   }
 
   .iconSize {
     font-size: 2rem;
-    margin-right: 0.5rem;
   }
 }
 
 @media screen and (max-width: 1000px) {
   .leftBox {
-    display: flex;
-    flex-direction: column;
-    width: 23%;
-    padding: 0.5em 0.8em;
-    margin: 0;
+    width: 25rem;
+    margin: 0 0 6px 0;
   }
 
   .rightBox {
-    display: flex;
-    flex-direction: column;
-    width: 23%;
-    padding: 0.5em 0.8em;
+    width: 25rem;
     margin: 0;
   }
 
   .searchBox {
+    align-self: center;
     order: -1;
+    margin-bottom: 3em;
+    width: 30rem;
   }
 
   .input {
-    width: 80%;
-    height: 3rem;
-    padding: 2em 0;
-    font-size: 1rem;
-    border-radius: 6px;
-   order: 1;
+    width: 100%;
+    order: 1;
   }
 
   .filterContainer {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 3em 0 4em 0;
-    border: solid;
-
   }
   .clearFilters {
-    text-align: center;
-    align-self: center;
-    width: 20%;
+    width: 45%;
+  }
+}
 
-    padding: 1em 0;
+@media screen and (max-width: 520px) {
+
+  .searchBox {
+    width: 20rem;
   }
 
   .clearFiltersText {
-    font-size: 1rem;
+    font-size: .85rem;
   }
 
   .textSize {
-    font-size: 18px;
-    width: 60%;
-    margin-left: 1rem;
-  }
-
-  .iconContainer {
-    display: flex;
-    width: 38%;
+    font-size: 16px;
   }
 
   .iconSize {
-    font-size: 2rem;
-    margin-right: 0.5rem;
+    font-size: 1.9rem;
   }
+}
+
+@media screen and (max-width: 435px) {
+  .leftBox {
+    width: 15rem;
+  }
+
+  .rightBox {
+    width: 15rem;
+  }
+
+ 
+  .clearFilters {
+    width: 40%;
+  }
+
+  
+}
+@media screen and (max-width: 330px) {
+  .leftBox {
+    width: 12rem;
+  }
+
+  .rightBox {
+    width: 12rem;
+  }
+
+  .searchBox {
+    width: 12rem;
+  }
+
+  .clearFilters {
+    width: 60%;
+  }
+
+  .iconContainer {
+    width: 32%;
+    padding: 0;
+  }
+
+  .iconSize {
+    font-size: 1.3rem;
+    margin-right: 0;
+
+  }
+}
+
+@media screen and (max-width: 235px) {
+
+  .filterContainer {
+    margin: 3em 0 4em 1em;
+  }
+}
+
+@media screen and (max-width: 170px) {
+ 
+  .filterContainer {
+    margin: 3em 0 4em 2em;
+  }
+  
 }
