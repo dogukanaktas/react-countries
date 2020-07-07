@@ -1,113 +1,128 @@
 .filterContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    border: solid;
-    margin: 3em 0 4em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 3em 0 4em 0;
 }
 
-
 .leftBox {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    border: solid;
-
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  padding: 0.5em 0.8em;
+  margin-left: 2em;
+  border-radius: 6px;
+  box-shadow: 0 1px 9px rgb(129, 129, 129);
 }
 
 .searchBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
 }
 
 .searchInputBox {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1.1em;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.1em;
 }
 
 .input {
-    width: 70%;
-    height: 3rem;
-    text-align: center;
-    border-radius: 6px;
-    border: none;
-    letter-spacing: .2px;
-    font-weight: 450;
+  width: 70%;
+  height: 3rem;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 6px;
+  border: none;
+  letter-spacing: 0.3px;
+  font-weight: 450;
 }
 
-.clearFilters{
-    text-align: center;
-    align-self: center;
-    width: 20%;
-    cursor:pointer;
-    border-radius: 6px;
-    background-color: #fff;
-    box-shadow: 0 1px 5px;
-    padding: 4px 0;
-    border: 1px solid rgb(121, 116, 116);
+input:focus {
+  outline-color: rgb(109, 152, 149);
+  background-color: rgb(248, 248, 248);
+}
+
+.clearFilters {
+  text-align: center;
+  align-self: center;
+  width: 20%;
+  cursor: pointer;
+  border-radius: 6px;
+  color: rgb(250, 250, 250);
+  background-color: rgb(109, 152, 149);
+  box-shadow: 0 1px 4px #000;
+  padding: 4px 0;
+  transition: 0.2s ease;
+  font-size: 1rem;
+  font-weight: 450;
 }
 
 .clearFilters:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .clearFilters:active {
-    transform: translateY(-1px);
+  transform: translateY(-1px);
 }
 
 .clearFiltersText {
-    font-size: 1rem;
-    letter-spacing: 0;
-
+  font-size: 1rem;
+  letter-spacing: 0;
 }
 
 .rightBox {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    border: solid;
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  padding: 0.5em 0.8em;
+  border-radius: 6px;
+  margin-right: 2em;
+  box-shadow: 0 1px 9px rgb(129, 129, 129);
 }
 
-.sortName {
-    display: flex;
-    align-items: center;
+.sortFilter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.3rem;
 }
-
-.sortCapital {
-    display: flex;
-    align-items: center;
-}
-
-.sortRegion {
-    display: flex;
-    align-items: center;
-}
-
-.sortLanguages {
-    display: flex;
-    align-items: center;
-}
-
 
 .textSize {
-    font-size: 18px;
+  font-size: 18px;
+  width: 60%;
+  margin-left: 1rem;
+}
+
+.iconContainer {
+  display: flex;
+  width: 38%;
 }
 
 .iconSize {
-    font-size: 2rem;
-    cursor: pointer;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
 }
 
 .iconSize:hover {
-    transform: translateY(-1px);
-
+  transition: 0.3s all;
+  transform: translateY(-1px);
+  color: rgb(250, 87, 87);
 }
 
 .iconSize:active {
-    transform: translateY(1px);
-
+  transform: translateY(1px);
 }
+
+
+
+
+
+
+
+
+
+
