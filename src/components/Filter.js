@@ -12,13 +12,6 @@ import { FaSearch } from "react-icons/fa";
 import styles from "../css/Filter.module.css";
 
 const Filter = ({ search, country, setSearch, setCountry }) => {
-  const sortByNameDesc = () => {
-    const nameDesc = [...country].sort((a, b) =>
-      a.name > b.name ? -1 : a.name < b.name ? 1 : 0
-    );
-    setCountry(nameDesc);
-  };
-
   const sortByNameAsc = () => {
     const nameAsc = [...country].sort((a, b) =>
       a.name < b.name ? -1 : a.name > b.name ? 1 : 0
@@ -27,11 +20,27 @@ const Filter = ({ search, country, setSearch, setCountry }) => {
     setCountry(nameAsc);
   };
 
-  const sortByPopulationDesc = () => {
-    const popDesc = [...country].sort((a, b) => {
-      return b.population - a.population;
-    });
-    setCountry(popDesc);
+  const sortByNameDesc = () => {
+    const nameDesc = [...country].sort((a, b) =>
+      a.name > b.name ? -1 : a.name < b.name ? 1 : 0
+    );
+    setCountry(nameDesc);
+  };
+
+  const sortByNameLengthAsc = () => {
+    const nameLengthAsc = [...country].sort((a, b) =>
+      a.name.length > b.name.length ? -1 : a.name.length < b.name.length ? 1 : 0
+    );
+
+    setCountry(nameLengthAsc);
+  };
+
+  const sortByNameLengthDesc = () => {
+    const nameLengthDesc = [...country].sort((a, b) =>
+      a.name.length < b.name.length ? -1 : a.name.length > b.name.length ? 1 : 0
+    );
+
+    setCountry(nameLengthDesc);
   };
 
   const sortByPopulationAsc = () => {
@@ -41,11 +50,11 @@ const Filter = ({ search, country, setSearch, setCountry }) => {
     setCountry(popAsc);
   };
 
-  const sortByAreaDesc = () => {
-    const areaDesc = [...country].sort((a, b) => {
-      return b.area - a.area;
+  const sortByPopulationDesc = () => {
+    const popDesc = [...country].sort((a, b) => {
+      return b.population - a.population;
     });
-    setCountry(areaDesc);
+    setCountry(popDesc);
   };
 
   const sortByAreaAsc = () => {
@@ -55,11 +64,11 @@ const Filter = ({ search, country, setSearch, setCountry }) => {
     setCountry(areaAsc);
   };
 
-  const sortByRegDesc = () => {
-    const regDesc = [...country].sort((a, b) => {
-      return a.region > b.region ? -1 : a.region < b.region ? 1 : 0;
+  const sortByAreaDesc = () => {
+    const areaDesc = [...country].sort((a, b) => {
+      return b.area - a.area;
     });
-    setCountry(regDesc);
+    setCountry(areaDesc);
   };
 
   const sortByRegAsc = () => {
@@ -69,16 +78,23 @@ const Filter = ({ search, country, setSearch, setCountry }) => {
     setCountry(regAsc);
   };
 
-  const sortByCapitalDesc = () => {
-    const regAsc = [...country].sort((a, b) => {
-      return a.capital > b.capital ? -1 : a.capital < b.capital ? 1 : 0;
+  const sortByRegDesc = () => {
+    const regDesc = [...country].sort((a, b) => {
+      return a.region > b.region ? -1 : a.region < b.region ? 1 : 0;
     });
-    setCountry(regAsc);
+    setCountry(regDesc);
   };
 
   const sortByCapitalAsc = () => {
     const regAsc = [...country].sort((a, b) => {
       return a.capital < b.capital ? -1 : a.capital > b.capital ? 1 : 0;
+    });
+    setCountry(regAsc);
+  };
+
+  const sortByCapitalDesc = () => {
+    const regAsc = [...country].sort((a, b) => {
+      return a.capital > b.capital ? -1 : a.capital < b.capital ? 1 : 0;
     });
     setCountry(regAsc);
   };
@@ -137,9 +153,9 @@ const Filter = ({ search, country, setSearch, setCountry }) => {
   return (
     <div className={styles.filterContainer}>
       <div className={styles.leftBox}>
-        <div className={styles.sortName}>
+        <div className={styles.sortFilter}>
           <span className={styles.textSize}>Name: </span>
-          <div>
+          <div className={styles.iconContainer}>
             <TiArrowSortedUp
               className={styles.iconSize}
               onClick={() => sortByNameAsc()}
@@ -150,40 +166,47 @@ const Filter = ({ search, country, setSearch, setCountry }) => {
             />
           </div>
         </div>
-        <div className={styles.sortCapital}>
+
+        
+
+        <div className={styles.sortFilter}>
           <span className={styles.textSize}>Capital: </span>
-          <div>
-          <TiArrowSortedUp
-            className={styles.iconSize}
-            onClick={() => sortByCapitalAsc()}
-          />
-          <TiArrowSortedDown
-            className={styles.iconSize}
-            onClick={() => sortByCapitalDesc()}
-          />
+          <div className={styles.iconContainer}>
+            <TiArrowSortedUp
+              className={styles.iconSize}
+              onClick={() => sortByCapitalAsc()}
+            />
+            <TiArrowSortedDown
+              className={styles.iconSize}
+              onClick={() => sortByCapitalDesc()}
+            />
           </div>
         </div>
-        <div className={styles.sortRegion}>
+        <div className={styles.sortFilter}>
           <span className={styles.textSize}>Region: </span>
-          <TiArrowSortedUp
-            className={styles.iconSize}
-            onClick={() => sortByRegAsc()}
-          />
-          <TiArrowSortedDown
-            className={styles.iconSize}
-            onClick={() => sortByRegDesc()}
-          />
+          <div className={styles.iconContainer}>
+            <TiArrowSortedUp
+              className={styles.iconSize}
+              onClick={() => sortByRegAsc()}
+            />
+            <TiArrowSortedDown
+              className={styles.iconSize}
+              onClick={() => sortByRegDesc()}
+            />
+          </div>
         </div>
-        <div className={styles.sortLanguages}>
+        <div className={styles.sortFilter}>
           <span className={styles.textSize}>Language: </span>
-          <TiArrowSortedUp
-            className={styles.iconSize}
-            onClick={() => sortByLangAsc()}
-          />
-          <TiArrowSortedDown
-            className={styles.iconSize}
-            onClick={() => sortByLangDesc()}
-          />
+          <div className={styles.iconContainer}>
+            <TiArrowSortedUp
+              className={styles.iconSize}
+              onClick={() => sortByLangAsc()}
+            />
+            <TiArrowSortedDown
+              className={styles.iconSize}
+              onClick={() => sortByLangDesc()}
+            />
+          </div>
         </div>
       </div>
 
@@ -195,7 +218,6 @@ const Filter = ({ search, country, setSearch, setCountry }) => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Enter country name..."
-            alt="sel"
             autoFocus
           />
         </div>
@@ -210,21 +232,60 @@ const Filter = ({ search, country, setSearch, setCountry }) => {
       </div>
 
       <div className={styles.rightBox}>
-        <div className={styles.sortCurrency}>
-          <span>Sort by Currency: </span>
-          <FaSortAmountDown onClick={() => sortByCurAsc()} />
-          <FaSortAmountUpAlt onClick={() => sortByCurDesc()} />
+        <div className={styles.sortFilter}>
+          <span className={styles.textSize}>Currency: </span>
+          <div className={styles.iconContainer}>
+            <TiArrowSortedUp
+              className={styles.iconSize}
+              onClick={() => sortByCurAsc()}
+            />
+            <TiArrowSortedDown
+              className={styles.iconSize}
+              onClick={() => sortByCurDesc()}
+            />
+          </div>
         </div>
-        <div className={styles.sortPopulation}>
-          <span>Sort by Population: </span>
-          <FaSortAmountDown onClick={() => sortByPopulationAsc()} />
-          <FaSortAmountUpAlt onClick={() => sortByPopulationDesc()} />
+        <div className={styles.sortFilter}>
+          <span className={styles.textSize}>Population: </span>
+          <div className={styles.iconContainer}>
+            <TiArrowSortedUp
+              className={styles.iconSize}
+              onClick={() => sortByPopulationAsc()}
+            />
+            <TiArrowSortedDown
+              className={styles.iconSize}
+              onClick={() => sortByPopulationDesc()}
+            />
+          </div>
         </div>
-        <div className={styles.sortArea}>
-          <span>Sort by Area: </span>
-          <FaSortAmountDown onClick={() => sortByAreaAsc()} />
-          <FaSortAmountUpAlt onClick={() => sortByAreaDesc()} />
+        <div className={styles.sortFilter}>
+          <span className={styles.textSize}>Area: </span>
+          <div className={styles.iconContainer}>
+            <TiArrowSortedUp
+              className={styles.iconSize}
+              onClick={() => sortByAreaAsc()}
+            />
+            <TiArrowSortedDown
+              className={styles.iconSize}
+              onClick={() => sortByAreaDesc()}
+            />
+          </div>
         </div>
+
+        <div className={styles.sortFilter}>
+          <span className={styles.textSize}>Name Length: </span>
+          <div className={styles.iconContainer}>
+            <TiArrowSortedUp
+              className={styles.iconSize}
+              onClick={() => sortByNameLengthAsc()}
+            />
+            <TiArrowSortedDown
+              className={styles.iconSize}
+              onClick={() => sortByNameLengthDesc()}
+            />
+          </div>
+        </div>
+        
       </div>
     </div>
   );
