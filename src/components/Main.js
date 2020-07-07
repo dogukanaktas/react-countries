@@ -33,45 +33,45 @@ const Main = ({ search, country, setSearch, setCountry }) => {
               <div className={styles.gridBox}>
 
                 <div className={styles.imageContainer}>
-                  <img className={styles.image} src={val.flag} />
+                <Link to={`/country/${val.alpha3Code}`}><img className={styles.image} src={val.flag} /></Link>
                 </div>
 
-                <div className={styles.name}>
+                <div className={styles.gridText}>
                 <Link className={styles.nameText} to={`/country/${val.alpha3Code}`}>{val.name.toUpperCase()}</Link>
                 </div>
 
                 <div className={styles.nativeName}>{`( ${val.nativeName} )`}</div>
 
-                <div className={styles.capital}>
-                <FiStar className={styles.capitalIcon} /> {val.capital || "No Capital"}
+                <div className={styles.gridText}>
+                <FiStar className={styles.gridIcon} /> {val.capital || "No Capital"}
                 </div>
 
                 
 
-                <div className={styles.region}>
-                  <FaGlobe className={styles.regionIcon} />{" "}
+                <div className={styles.gridText}>
+                  <FaGlobe className={styles.gridIcon} />{" "}
                   {val.region
                     ? val.region + " - " + val.subregion
                     : "Unspecified"}
                 </div>
 
-                <div className={styles.languages}>
-                  <FaLanguage className={styles.languagesIcon}/> {val.languages.map((lang) => lang.name + " ")}
+                <div className={styles.gridText}>
+                  <FaLanguage className={styles.gridIcon}/> {val.languages.map((lang) => lang.name + " ")}
                 </div>
 
-                <div className={styles.currencies}>
-                  <GrCurrency className={styles.currenciesIcon} />{" "}
+                <div className={styles.gridText}>
+                  <GrCurrency className={styles.gridIcon} />{" "}
                   {val.currencies.map(
                     (cur) => cur.code === "(none)" ? "" : cur.code === null ? "" : cur.code + " "
                   )}
                 </div>
 
-                <div className={styles.population}>
-                  <BsFillPeopleFill className={styles.populationIcon} /> {val.population ? val.population.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') : "0"}
+                <div className={styles.gridText}>
+                  <BsFillPeopleFill className={styles.gridIcon} /> {val.population ? val.population.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') : "0"}
                 </div>
 
-                <div className={styles.area}>
-                  <GoGlobe className={styles.areaIcon} />{" "}
+                <div className={styles.gridText}>
+                  <GoGlobe className={styles.gridIcon} />{" "}
                   {val.area ? (
                     <span className={styles.areaSpan}>
                       {val.area.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} km<sup>2</sup>
