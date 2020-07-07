@@ -53,87 +53,18 @@
   text-align: center;
 }
 
-.capital {
+.gridText {
   display: flex;
   align-items: center;
+  font-size: 1rem;
   margin-bottom: 0.2em;
   text-align: center;
 }
 
-.capitalIcon {
-  width: 1rem;
-  height: auto;
+.gridIcon {
   color: #000;
-  margin-right: 0.5em;
-}
-
-.region {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.2em;
-  text-align: center;
-}
-
-.regionIcon {
-  width: 1rem;
+   width: 1rem;
   height: auto;
-  color: #000;
-  margin-right: 0.5em;
-}
-
-.languages {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 0.2em;
-}
-
-.languagesIcon {
-  width: 1rem;
-  height: auto;
-  color: #000;
-  margin-right: 0.5em;
-}
-
-.currencies {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 0.2em;
-}
-
-.currenciesIcon {
-  width: 1rem;
-  height: auto;
-  color: #000;
-  margin-right: 0.5em;
-}
-
-.population {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 0.2em;
-}
-
-.populationIcon {
-  width: 1rem;
-  height: auto;
-  color: #000;
-  margin-right: 0.5em;
-}
-
-.area {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 0.2em;
-}
-
-.areaIcon {
-  width: 1rem;
-  height: auto;
-  color: #000;
   margin-right: 0.5em;
 }
 
@@ -141,3 +72,23 @@
   font-size: 1rem;
   letter-spacing: 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
