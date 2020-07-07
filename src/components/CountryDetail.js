@@ -18,7 +18,7 @@ const CountryDetail = (props) => {
           <img
             className={styles.flag}
             src={countries.map((val) => val.flag)}
-            alt=""
+            alt="Country Flag"
           />
           <div className={styles.buttonSub}>
             <button
