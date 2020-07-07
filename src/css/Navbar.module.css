@@ -38,13 +38,13 @@
 
 .li {
   list-style: none;
-  font-size: 1.5rem;
 }
 
 .link {
   color: rgb(255, 255, 255);
   text-shadow: 0 1px 4px;
   letter-spacing: 1px;
+  font-size: 1.2rem;
 }
 
 .link:hover {
@@ -53,3 +53,22 @@
   transition: 1s ease;
   text-decoration: none;
 }
+
+
+
+
+/*** Media Queries ***/
+
+@media screen and (max-width: 660px) {
+  .link {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .container {
+    margin-left: .5rem;
+  }
+}
+
+
