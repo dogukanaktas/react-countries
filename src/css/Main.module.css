@@ -28,8 +28,6 @@
   box-shadow: 0 0 4px rgb(146, 143, 143);
 }
 
-
-
 .nameText {
   color: #000;
   letter-spacing: 1px;
@@ -68,9 +66,6 @@
   letter-spacing: 0;
 }
 
-
-
-
 /*** Media Queries ***/
 
 @media screen and (max-width: 7000px) {
@@ -81,7 +76,7 @@
 
   .gridBox {
     width: 25rem;
-    height: 38rem;
+    height: 41rem;
   }
 
   .imageContainer {
@@ -109,8 +104,6 @@
   .areaSpan {
     font-size: 1.4rem;
   }
-  
-  
 }
 
 @media screen and (max-width: 2500px) {
@@ -119,7 +112,7 @@
   }
 
   .gridBox {
-    height: 37rem;
+    height: 38rem;
   }
 
   .nameText {
@@ -141,16 +134,12 @@
   .areaSpan {
     font-size: 1.3rem;
   }
-  
-  
 }
 
 @media screen and (max-width: 2140px) {
   .gridContainer {
     grid-template-columns: repeat(4, auto);
   }
-
-  
 }
 
 @media screen and (max-width: 1750px) {
@@ -159,7 +148,7 @@
   }
 
   .gridBox {
-    height: 36rem;
+    height: 38rem;
   }
 
   .nativeName {
@@ -177,12 +166,9 @@
   .areaSpan {
     font-size: 1.2rem;
   }
-  
-  
 }
 
 @media screen and (max-width: 1350px) {
-
   .gridBox {
     height: 33rem;
   }
@@ -206,8 +192,6 @@
   .areaSpan {
     font-size: 1rem;
   }
-  
-  
 }
 
 @media screen and (max-width: 1250px) {
@@ -220,7 +204,6 @@
   .gridContainer {
     grid-template-columns: repeat(1, auto);
   }
-
 }
 
 @media screen and (max-width: 520px) {
@@ -258,19 +241,13 @@
   .areaSpan {
     font-size: 14px;
   }
-  
-  
 }
 
 @media screen and (max-width: 350px) {
-  
-
   .gridBox {
     width: 17rem;
     height: 25rem;
   }
-
-  
 
   .nameText {
     font-size: 1.1rem;
@@ -291,16 +268,12 @@
   .areaSpan {
     font-size: 12px;
   }
-  
-  
 }
 
 @media screen and (max-width: 310px) {
   .gridBox {
-  
     margin-left: 1.2rem;
   }
-
 }
 
 @media screen and (max-width: 260px) {
@@ -313,23 +286,17 @@
     width: 70%;
     height: 5rem;
   }
-
 }
 
 @media screen and (max-width: 185px) {
- 
-
   .gridBox {
     width: 9rem;
     height: 19rem;
   }
 
   .imageContainer {
-   
     margin: 1em 0;
   }
-
- 
 
   .nativeName {
     font-size: 10px;
@@ -346,13 +313,10 @@
   .areaSpan {
     font-size: 10px;
   }
-  
-  
 }
 
 @media screen and (max-width: 130px) {
   .gridBox {
-   
     margin-left: 5.5rem;
   }
 }
