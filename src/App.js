@@ -4,6 +4,7 @@ import axios from "axios";
 import Main from "./components/Main";
 import About from "./components/About";
 import Navbar from "./components/NavBar";
+import Error from "./components/Error"
 import CountryDetail from "./components/CountryDetail";
 import "./index.css";
 
@@ -36,13 +37,15 @@ const App = () => {
         />
         <Route exact path="/About" component={About} />
         <Route
-          
           path="/country/:name"
           render={(renderProps) => {
            const countries = country.filter((val) => val.alpha3Code === renderProps.match.params.name && val)
             return <CountryDetail {...renderProps} countries={countries} />
           }}
         />
+        <Route render={
+          renderProps => <Error {...renderProps} />
+        } />
       </Switch>
     </Router>
   );
