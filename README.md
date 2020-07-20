@@ -2,6 +2,10 @@
 
 In this project fully responsive website created where the user can access the information of all countries in the world. Obtained the data of these countries using the REST Countries API. Used React Hooks for state management. On the main page, the user can search instantly about these countries, can filter according to features such as name, capital, region, language, currency, etc. The user is directed to the page of that country by clicking on that country to get more details about a country they want.
 
+> [Live Site](https://reactjs-countries.netlify.app/ "Go to the React Countries App")
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
