@@ -1,0 +1,14 @@
+.about {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.logo {
+    margin-right: .25em;
+    font-size: 3em;
+}
+.github {
+    font-size: 1.25em;
+    margin-top: .25em;
+}
